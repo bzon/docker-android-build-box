@@ -1,10 +1,6 @@
 # Docker Android Build Box
 
-
-[![Build Status](https://travis-ci.org/mingchen/docker-android-build-box.svg?branch=master)](https://travis-ci.org/mingchen/docker-android-build-box)
-
-[![docker icon](http://dockeri.co/image/mingc/android-build-box)](https://hub.docker.com/r/mingc/android-build-box/)
-
+[![CircleCI](https://circleci.com/gh/bzon/docker-android-build-box.svg?style=svg)](https://circleci.com/gh/bzon/docker-android-build-box)
 
 ## Introduction
 
@@ -33,9 +29,9 @@ It includes the following components:
 
 ## Docker Pull Command
 
-The docker image is publicly automated build on [Docker Hub](https://hub.docker.com/r/mingc/android-build-box/) based on the Dockerfile in this repo, so there is no hidden stuff in it. To pull the latest docker image:
+The docker image is publicly automated build on [Docker Hub](https://hub.docker.com/r/bzon/docker-android-build-box/) based on the Dockerfile in this repo, so there is no hidden stuff in it. To pull the latest docker image:
 
-    docker pull mingc/android-build-box:latest
+    docker pull bzon/android-build-box:latest
 
 
 ## Usage
@@ -45,25 +41,7 @@ The docker image is publicly automated build on [Docker Hub](https://hub.docker.
 You can use this docker image to build your Android project with a single docker command:
 
     cd <android project directory>  # change working directory to your project root directory.
-    docker run --rm -v `pwd`:/project mingc/android-build-box bash -c 'cd /project; ./gradlew build'
-
-
-
-### Use the image for a Bitbucket pipeline
-
-If you have an Android project in a Bitbucket repository and want to use its pipeline to build it, you can simply specify this docker image.
-Here is an example of `bitbucket-pipelines.yml`
-
-    image: mingc/android-build-box:latest
-
-    pipelines:
-      default:
-        - step:
-            script:
-              - chmod +x gradlew
-              - ./gradlew assemble
-
-If gradlew is marked as executable in your repository as recommended, remove the `chmod` command.
+    docker run --rm -v `pwd`:/project bzon/android-build-box bash -c 'cd /project; ./gradlew build'
 
 
 ## Docker Build Image
@@ -76,7 +54,7 @@ The image itself is more than 5 GB, check your free disk space before building i
 
 ## Contribution
 
-If you want to enhance this docker image for fix something, feel free to send [pull request](https://github.com/mingchen/docker-android-build-box/pull/new/master).
+If you want to enhance this docker image for fix something, feel free to send [pull request](https://github.com/bzonhen/docker-android-build-box/pull/new/master).
 
 
 ## References

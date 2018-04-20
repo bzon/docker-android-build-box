@@ -1,6 +1,6 @@
 FROM ubuntu:17.10
 
-MAINTAINER Ming Chen
+MAINTAINER John Bryan Sazon 
 
 ENV ANDROID_HOME="/opt/android-sdk" \
     ANDROID_NDK="/opt/android-ndk" \
